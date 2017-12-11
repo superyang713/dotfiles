@@ -102,6 +102,7 @@ set wildignore+=*/coverage/*
 
 " Settings for python-mode
 " map <Leader>g :call RopeGotoDefinition()<CR>
+let g:pymode_virtualenv = 1
 " let ropevim_enable_shortcuts = 1
 " let g:pymode_rope_goto_def_newwin = vnew
 " let g:pymode_rope_extended_complete = 1
