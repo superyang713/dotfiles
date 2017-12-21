@@ -20,7 +20,7 @@ autocmd BufWritePre * %s/\s\+$//e
 :nmap <C-N><C-N> :set invnumber<CR>
 
 " Showing line numbers and length
-set relativenumber " show line numbers
+set number " show line numbers
 set tw=79 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
@@ -58,7 +58,8 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Color scheme
 syntax enable
-colorscheme pychimp
+set background=dark
+colorscheme solarized
 
 " Make search case insensitive
 set hlsearch
@@ -74,15 +75,13 @@ set noswapfile
 " Show the current line
 set cursorline
 
-" Show the command
-set showcmd
-
 " Pathogen load
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 set nocompatible
+set showcmd
 
 
 
@@ -102,7 +101,6 @@ set wildignore+=*/coverage/*
 
 " Settings for python-mode
 " map <Leader>g :call RopeGotoDefinition()<CR>
-let g:pymode_virtualenv = 1
 " let ropevim_enable_shortcuts = 1
 " let g:pymode_rope_goto_def_newwin = vnew
 " let g:pymode_rope_extended_complete = 1
