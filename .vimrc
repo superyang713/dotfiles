@@ -19,6 +19,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " map ctrl n to line numbers
 :nmap <C-N><C-N> :set invnumber<CR>
 
+" pytest report
+nmap <Leader>r :w<CR>:!pytest --cov-report term-missing --cov='.'<CR>
+
 " Showing line numbers and length
 set number " show line numbers
 set tw=79 " width of document (used by gd)
@@ -75,7 +78,6 @@ set noswapfile
 " Show the current line
 set cursorline
 
-" Pathogen load
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
@@ -101,6 +103,7 @@ set wildignore+=*/coverage/*
 
 " Settings for python-mode
 " map <Leader>g :call RopeGotoDefinition()<CR>
+let g:pymode_virtualenv = 1
 " let ropevim_enable_shortcuts = 1
 " let g:pymode_rope_goto_def_newwin = vnew
 " let g:pymode_rope_extended_complete = 1
@@ -150,3 +153,13 @@ set pastetoggle=<F2>
 " turn off auto complete
 " let g:pymode_rope_completion = 0
 " let g:pymode_rope_complete_on_dot = 0
+"
+
+let delimitMate_expand_cr = 1
+au FileType mail let b:delimitMate_expand_cr = 1
+
+let dilimitMate_expand_space = 1
+au Filetype tcl let b:delimitMate_expand_space = 1
+
+let delimitMate_jump_expansion = 1
+au FileType tcl let b:delimitMate_jump_expansion = 1
