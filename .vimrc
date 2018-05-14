@@ -115,19 +115,19 @@ let g:pymode_virtualenv = 1
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
-set completeopt=longest,menuone
-function! OmniPopup(action)
-  if pumvisible()
-    if a:action == 'j'
-      return "\<C-N>"
-    elseif a:action == 'k'
-      return "\<C-P>"
-    endif
-  endif
-  return a:action
-endfunction
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+" set completeopt=longest,menuone
+" function! OmniPopup(action)
+"   if pumvisible()
+"     if a:action == 'j'
+"       return "\<C-N>"
+"     elseif a:action == 'k'
+"       return "\<C-P>"
+"     endif
+"   endif
+"   return a:action
+" endfunction
+" inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+" inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Neocomplete
 " let g:neocomplete#enable_at_startup = 1
