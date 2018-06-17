@@ -115,7 +115,7 @@ let g:pymode_virtualenv = 1
 " map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
-" set completeopt=longest,menuone
+set completeopt=longest,menuone
 " function! OmniPopup(action)
 "   if pumvisible()
 "     if a:action == 'j'
