@@ -163,3 +163,10 @@ au Filetype tcl let b:delimitMate_expand_space = 1
 
 let delimitMate_jump_expansion = 1
 au FileType tcl let b:delimitMate_jump_expansion = 1
+
+
+" cpp highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
