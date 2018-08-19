@@ -5,6 +5,8 @@ download_repo()
     echo "Downloading all config files from https://github.com/superyang713/\
 vimrc-and-plugins"
     git clone https://github.com/superyang713/vimrc-and-plugins
+    cd vimrc-and-plugins/vim_plugins/bundle/
+    echo "Downloading vim plugins"
 }
 
 install_vimrc()
