@@ -44,7 +44,7 @@ install_vim_plugins()
 {
     echo "installing all vim plugins"
     rm -rf ~/.vim
-    cp -r vim_plugins/ .vim/
+    cp -r vim_plugins ~/.vim
 }
 
 install_tmux_config()
