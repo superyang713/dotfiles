@@ -24,7 +24,7 @@ download_repo()
     git clone --quiet https://github.com/tomtom/tlib_vim.git
     echo "Downloading snippets..."
     git clone --quiet https://github.com/honza/vim-snippets.git
-    git clone --quiet  https://github.com/MarcWeber/vim-addon-mw-utils.git
+    git clone --quiet https://github.com/MarcWeber/vim-addon-mw-utils.git
     echo "Downloading snipmate..."
     git clone --quiet https://github.com/garbas/vim-snipmate.git
     echo "Downloading ctrlp..."
