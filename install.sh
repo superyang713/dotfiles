@@ -59,12 +59,9 @@ install_zsh()
     echo "installing zsh"
     sudo apt install zsh
 
-    echo "installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-    echo "installing zshrc and plugins"
+    echo "installing oh-my-zsh and plugins"
     cp zshrc ~/.zshrc
-    source ~/.zshrc
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 cleanup()
