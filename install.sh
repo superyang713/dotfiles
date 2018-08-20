@@ -150,8 +150,6 @@ install_zsh()
     echo ''
     echo ''
 
-    echo "install zplug"
-    git clone https://github.com/zplug/zplug ~/.zplug
     finalize
 }
 
