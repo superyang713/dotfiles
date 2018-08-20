@@ -58,18 +58,19 @@ install_zsh()
 {
     echo "installing zsh"
     sudo apt install zsh
+    zsh
 
     echo "installing oh-my-zsh and plugins"
-    cp zshrc ~/.zshrc
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cp zshrc ~/.zshrc
+    source ~/.zshrc
 }
 
 cleanup()
 {
     echo "cleaning up..."
     echo "removing unsed files..."
-    cd ~
-    rm -rf vimrc-and-plugins/
+    rm -rf ~/vimrc-and-plugins
 }
 
 help_message()
