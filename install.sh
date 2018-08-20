@@ -48,13 +48,10 @@ install_vim_plugins()
     cp -r vim_plugins ~/.vim
 }
 
-install_tmux_and_config()
+install_tmux_config()
 {
-    echo "installing tmux"
-    sudo apt install tmux
-    echo "reload new tmux config file"
+    echo "Transferring new tmux config file"
     cp tmux.conf ~/.tmux.conf
-    tmux source-file ~/.tmux.conf
 }
 
 install_zsh()
@@ -64,7 +61,7 @@ install_zsh()
     echo "installing zsh"
     sudo apt install zsh
     echo "installing oh-my-zsh"
-    git clone --quite https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     chsh -s /usr/bin/zsh
 }
 
