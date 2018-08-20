@@ -56,6 +56,8 @@ install_tmux_config()
 
 install_zsh()
 {
+    echo "Transfering .zshrc"
+    cp zshrc ~/.zshrc
     echo "installing zsh"
     sudo apt install zsh
     echo "installing oh-my-zsh"
@@ -124,20 +126,6 @@ install_zsh()
       exit 1
     }
 
-
-    printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
-    if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-      printf "${YELLOW}Found ~/.zshrc.${NORMAL} ${GREEN}Backing up to ~/.zshrc.pre-oh-my-zsh${NORMAL}\n";
-      mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
-    fi
-
-    printf "${BLUE}Using the Oh My Zsh template file and adding it to ~/.zshrc${NORMAL}\n"
-    cp "$ZSH"/templates/zshrc.zsh-template ~/.zshrc
-    sed "/^export ZSH=/ c\\
-    export ZSH=\"$ZSH\"
-    " ~/.zshrc > ~/.zshrc-omztemp
-    mv -f ~/.zshrc-omztemp ~/.zshrc
-
     # If this user's login shell is not already "zsh", attempt to switch.
     TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
     if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
@@ -161,16 +149,6 @@ install_zsh()
     echo '                        /____/                       ....is now installed!'
     echo ''
     echo ''
-    echo 'Please look over the ~/.zshrc file to select plugins, themes, and options.'
-    echo ''
-    echo 'p.s. Follow us at https://twitter.com/ohmyzsh.'
-    echo ''
-    echo 'p.p.s. Get stickers and t-shirts at https://shop.planetargon.com.'
-    echo ''
-    printf "${NORMAL}"
-
-    echo "Transfering .zshrc"
-    cp zshrc ~/.zshrc
     finalize
 }
 
