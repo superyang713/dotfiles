@@ -70,7 +70,7 @@ finalize()
     echo "cleaning up..."
     echo "removing unsed files..."
     rm -rf ~/vimrc-and-plugins
-    exec /bin/usr/zsh
+    exec /usr/bin/zsh
 }
 
 help_message()
@@ -91,7 +91,7 @@ if [ $resp = "y" ]; then
 
     source ~/.vimrc
 
-    install_tmux_and_config
+    install_tmux_config
     install_zsh
     help_message
     finalize
