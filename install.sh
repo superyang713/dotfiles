@@ -62,8 +62,6 @@ install_zsh()
     sudo apt install zsh
     echo "installing oh-my-zsh"
     git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    echo "installing zplug"
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     chsh -s /usr/bin/zsh
 }
 
