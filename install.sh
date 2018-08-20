@@ -65,14 +65,15 @@ install_zsh()
     sudo apt install zsh
     echo "installing oh-my-zsh"
     git clone --quite https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    chsh -s /bin/zsh
+    chsh -s /usr/bin/zsh
 }
 
-cleanup()
+finalize()
 {
     echo "cleaning up..."
     echo "removing unsed files..."
     rm -rf ~/vimrc-and-plugins
+    exec /bin/usr/zsh
 }
 
 help_message()
@@ -96,7 +97,7 @@ if [ $resp = "y" ]; then
     install_tmux_and_config
     install_zsh
     help_message
-    cleanup
+    finalize
 else
     echo "oh no"
 fi;
