@@ -48,20 +48,24 @@ install_vim_plugins()
     cp -r vim_plugins ~/.vim
 }
 
-install_tmux_config()
+install_tmux_and_config()
 {
-    echo "installing tmux.config"
+    echo "installing tmux"
+    sudo apt install tmux
+    echo "reload new tmux config file"
     cp tmux.conf ~/.tmux.conf
+    tmux source-file ~/.tmux.conf
 }
 
 install_zsh()
 {
+    echo "Transfering .zshrc"
+    cp zshrc ~/.zshrc
     echo "installing zsh"
     sudo apt install zsh
-    cp zshrc ~/.zshrc
-
-    echo "Please install oh-my-zsh to take full advantage of zsh,  and don't \
-forget to source the .zshrc file and the end."
+    echo "installing oh-my-zsh"
+    git clone --quite https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    chsh -s /bin/zsh
 }
 
 cleanup()
@@ -73,8 +77,8 @@ cleanup()
 
 help_message()
 {
-    echo "If text is not displayed properly after oh-my-zsh installation, \
-please install the font -- Shure Tech Mono Nerd Font Complete Mono"
+    echo "If text is not displayed properly after terminal restart, please \
+install the font -- Shure Tech Mono Nerd Font Complete Mono"
 }
 
 echo "The installation will replace your current vimrc, zshrc, and vim plugins,
@@ -89,7 +93,7 @@ if [ $resp = "y" ]; then
 
     source ~/.vimrc
 
-    install_tmux_config
+    install_tmux_and_config
     install_zsh
     help_message
     cleanup
