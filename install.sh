@@ -63,7 +63,7 @@ install_zsh()
     echo "installing oh-my-zsh"
     git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     echo "installing zplug"
-    git clone --quiet https://github.com/zplug/zplug.git ~/.zplug
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     chsh -s /usr/bin/zsh
 }
 
