@@ -17,7 +17,7 @@ download_repo()
     echo "Downloading sensible..."
     git clone --quiet https://github.com/tpope/vim-sensible.git
     echo "Downloading python-mode..."
-    git clone --recursive --quiet https://github.com/python-mode/python-mode
+    #git clone --recursive --quiet https://github.com/python-mode/python-mode
     echo "Downloading sparkup..."
     git clone --quiet https://github.com/rstacruz/sparkup.git
     echo "Downloading tlib_vim..."
@@ -62,7 +62,14 @@ install_zsh()
     sudo apt install zsh
     echo "installing oh-my-zsh"
     git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    chsh -s /usr/bin/zsh
+    echo '         __                                     __   '
+    echo '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
+    echo ' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '
+    echo '/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '
+    echo '\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '
+    echo '                        /____/                       ....is now installed!'
+    echo ''
+    echo ''
 }
 
 finalize()
@@ -70,7 +77,8 @@ finalize()
     echo "cleaning up..."
     echo "removing unsed files..."
     rm -rf ~/vimrc-and-plugins
-    exec /usr/bin/zsh
+    chsh -s /usr/bin/zsh
+    env zsh -l
 }
 
 help_message()
