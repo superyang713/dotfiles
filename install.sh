@@ -58,12 +58,10 @@ install_zsh()
 {
     echo "installing zsh"
     sudo apt install zsh
-    zsh
-
-    echo "installing oh-my-zsh and plugins"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     cp zshrc ~/.zshrc
-    source ~/.zshrc
+
+    echo "Please install oh-my-zsh to take full advantage of zsh,  and don't \
+forget to source the .zshrc file and the end."
 }
 
 cleanup()
@@ -75,8 +73,8 @@ cleanup()
 
 help_message()
 {
-    echo "If text is not displayed properly, please install the font -- Shure \
-Tech Mono Nerd Font Complete Mono"
+    echo "If text is not displayed properly after oh-my-zsh installation, \
+please install the font -- Shure Tech Mono Nerd Font Complete Mono"
 }
 
 echo "The installation will replace your current vimrc, zshrc, and vim plugins,
