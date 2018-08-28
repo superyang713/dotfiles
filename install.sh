@@ -17,7 +17,7 @@ download_repo()
     echo "Downloading sensible..."
     git clone --quiet https://github.com/tpope/vim-sensible.git
     echo "Downloading python-mode..."
-    #git clone --recursive --quiet https://github.com/python-mode/python-mode
+    git clone --recursive --quiet https://github.com/python-mode/python-mode
     echo "Downloading sparkup..."
     git clone --quiet https://github.com/rstacruz/sparkup.git
     echo "Downloading tlib_vim..."
