@@ -31,6 +31,11 @@ download_repo()
     git clone --quiet https://github.com/kien/ctrlp.vim.git
     echo "Downloading solarize..."
     git clone --quiet https://github.com/altercation/vim-colors-solarized.git
+    echo "Downloading jedi-auto-complete..."
+    git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+    echo "Downloading Markdown-Preview"
+    git clone https://github.com/iamcco/markdown-preview.vim.git
+
 
     cd ~/vimrc-and-plugins
 }
