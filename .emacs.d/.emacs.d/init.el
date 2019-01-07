@@ -1,43 +1,32 @@
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
 (package-initialize)
 
 (require 'package)
-(elpy-enable)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://melpa.org/packages/"))
 
-;; choose a theme
-(load-theme 'spacemacs-dark)
+(elpy-enable)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(package-selected-packages (quote (magit spacemacs-theme elpy dracula-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; No splash screen
+(setq inhibit-startup-message t)
 
-;; show column number in the mode line
-(setq column-number-mode t)
+;; insert Parenthesis by pair.
+(electric-pair-mode 1)
 
 ;; line number customization
 (global-linum-mode t)
 (setq linum-format "%2d\u2502")
 
-;; insert Parenthesis by pair.
-(electric-pair-mode 1)
+;; show column number in the mode line
+(setq column-number-mode t)
 
-;; hide menu bar
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+;;;;;;;;;;;;;;;;;;;;;;;;Choose A Theme;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load-theme 'spacemacs-dark t)
+
 
 ;; place auto-saves and backups in the temp dir in both windows and linux
 ;; Save all tempfiles in $TMPDIR/emacs$UID/                                                        
@@ -58,3 +47,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "M-p") 'ace-window)
+
+;;;;;;;;;;;;;;;;;;;;;;;;Company Auto-completion;;;;;;;;;;;;;;;;;
+(add-hook 'after-init-hook 'global-company-mode)
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-flow))
