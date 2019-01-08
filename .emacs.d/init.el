@@ -24,7 +24,8 @@
 (electric-pair-mode 1)
 
 ;; auto-paragraph-fill at length 80
-(add-hook 'text-mode-hook '(lambda() (turn-on-auto-fill) (set-fill-column 80)))
+(add-hook 'text-mode-hook
+	  '(lambda() (turn-on-auto-fill) (set-fill-column 80)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
