@@ -34,7 +34,7 @@
 (load-theme 'spacemacs-dark t)
 
 ;; set font size
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 120)
 
 ;; line number customization
 (global-linum-mode t)
@@ -61,6 +61,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "M-p") 'ace-window)
+(define-key global-map (kbd "C-M-SPC") 'ace-jump-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -72,5 +73,19 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;Customized Function;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ace-jump-mode spacemacs-theme magit elpy dracula-theme company-flow ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
