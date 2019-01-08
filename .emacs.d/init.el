@@ -32,6 +32,9 @@
 ;; Choose a theme
 (load-theme 'spacemacs-dark t)
 
+;; set font size
+(set-face-attribute 'default nil :height 160)
+
 ;; line number customization
 (global-linum-mode t)
 (setq linum-format "%2d\u2502")
