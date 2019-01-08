@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Initialization;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;initialization;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -45,6 +45,14 @@
 
 ;; No splash screen
 (setq inhibit-startup-message t)
+
+;; rainbow-delimiters that highlights delimiters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; powerline mode line
+(add-to-list 'load-path "~/.emacs.d/elpa/powerline")
+(require 'powerline)
+(powerline-default-theme)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -61,7 +69,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "M-p") 'ace-window)
-(define-key global-map (kbd "C-M-SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-M-w") 'ace-jump-mode)
+(define-key global-map (kbd "C-M-c") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-M-l") 'ace-jump-line-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -74,18 +84,3 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;Customized Function;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ace-jump-mode spacemacs-theme magit elpy dracula-theme company-flow ace-window))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
