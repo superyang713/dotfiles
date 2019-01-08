@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/denny/Documents/WaveMetrics'
-let g:netrw_dirhist_2='/Users/denny/Desktop'
-let g:netrw_dirhist_3='/Users/denny'
-let g:netrw_dirhist_4='/Users/denny/Desktop/swift/MyPlayground.playground'
-let g:netrw_dirhist_5='/Users/denny/Desktop'
