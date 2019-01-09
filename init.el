@@ -34,7 +34,7 @@
 (load-theme 'spacemacs-dark t)
 
 ;; set font size
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 160)
 
 ;; line number customization
 (global-linum-mode t)
@@ -56,6 +56,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Ivy customization;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Elpy config;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (elpy-enable)
 (setq python-shell-interpreter "jupyter"
@@ -72,6 +79,7 @@
 (define-key global-map (kbd "C-M-w") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-c") 'ace-jump-char-mode)
 (define-key global-map (kbd "C-M-l") 'ace-jump-line-mode)
+(global-set-key (kbd "C-s") 'swiper)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -79,8 +87,4 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'company-flow))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;Customized Function;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
