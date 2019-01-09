@@ -16,35 +16,31 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "M-p") 'ace-window)
+(define-key global-map (kbd "C-M-w") 'ace-jump-mode)
+(define-key global-map (kbd "C-M-c") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-M-l") 'ace-jump-line-mode)
+(global-set-key (kbd "C-s") 'swiper)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Personalization;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; indentation
-(setq js-indent-level 2)
-
-;; insert Parenthesis by pair.
-(electric-pair-mode 1)
-
-;; auto-paragraph-fill at length 80
-(add-hook 'text-mode-hook
+(setq js-indent-level 2)    ;; indentation
+(electric-pair-mode 1)      ;; insert Parenthesis by pair.
+(add-hook 'text-mode-hook   ;; auto-paragraph-fill at length 80
 	  '(lambda() (turn-on-auto-fill) (set-fill-column 80)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;Theme Customization;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Choose a theme
-(load-theme 'spacemacs-dark t)
-
-;; set font size
-(set-face-attribute 'default nil :height 160)
-
-;; line number customization
-(global-linum-mode t)
+(load-theme 'spacemacs-dark t)               ;; Choose a theme
+(set-face-attribute 'default nil :height 120);; set font size
+(global-linum-mode t)                        ;; line number customization
 (setq linum-format "%2d\u2502")
-
-;; show column number in the mode line
-(setq column-number-mode t)
-
-;; No splash screen
-(setq inhibit-startup-message t)
+(setq column-number-mode t)        ;; show column number in the mode line
+(setq inhibit-startup-message t)   ;; No splash screen
 
 ;; rainbow-delimiters that highlights delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -73,18 +69,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "M-p") 'ace-window)
-(define-key global-map (kbd "C-M-w") 'ace-jump-mode)
-(define-key global-map (kbd "C-M-c") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-M-l") 'ace-jump-line-mode)
-(global-set-key (kbd "C-s") 'swiper)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;Company Auto-completion;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'company-flow))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;Yasnippets config;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(yas-global-mode 1)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Emmet mode;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'emmet-mode-hook
+	  (lambda () (setq emmet-indent-after-insert nil)))
+(add-hook 'emmet-mode-hook
+	  (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
