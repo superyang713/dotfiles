@@ -36,7 +36,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;Theme Customization;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load-theme 'spacemacs-dark t)               ;; Choose a theme
-(set-face-attribute 'default nil :height 120);; set font size
+(set-face-attribute 'default nil :height 160);; set font size
 (global-linum-mode t)                        ;; line number customization
 (setq linum-format "%2d\u2502")
 (setq column-number-mode t)        ;; show column number in the mode line
@@ -61,11 +61,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Elpy config;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (elpy-enable)
-(setq python-shell-interpreter "jupyter"
-      python-shell-interpreter-args "console --simple-prompt"
-      python-shell-prompt-detect-failure-warning nil)
-(add-to-list 'python-shell-completion-native-disabled-interpreters
-             "jupyter")
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+(setq python-indent-guess-indent-offset t)  
+(setq python-indent-guess-indent-offset-verbose nil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -88,4 +87,3 @@
 (add-hook 'emmet-mode-hook
 	  (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
