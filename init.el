@@ -19,9 +19,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "M-p") 'ace-window)
-(define-key global-map (kbd "C-M-w") 'ace-jump-mode)
-(define-key global-map (kbd "C-M-c") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-M-l") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-,") 'ace-jump-mode)
+(define-key global-map (kbd "C-.") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-m") 'ace-jump-line-mode)
 (global-set-key (kbd "C-s") 'swiper)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -72,6 +72,7 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'company-flow))
+(setq company-idle-delay 0)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -86,4 +87,11 @@
 	  (lambda () (setq emmet-indent-after-insert nil)))
 (add-hook 'emmet-mode-hook
 	  (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Projectile;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
