@@ -21,7 +21,7 @@
 (global-set-key (kbd "M-p") 'ace-window)
 (define-key global-map (kbd "C-,") 'ace-jump-mode)
 (define-key global-map (kbd "C-.") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-m") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-/") 'ace-jump-line-mode)
 (global-set-key (kbd "C-s") 'swiper)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
