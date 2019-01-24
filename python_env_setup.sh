@@ -8,4 +8,3 @@ read env
 virtualenv $env
 source $env/bin/activate
 pip install rope jedi importmagic autopep8 flake8 jupyter yapf black
-deactivate
