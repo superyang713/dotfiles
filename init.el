@@ -18,7 +18,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;key bindings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "M-p") 'ace-window)
+(global-set-key (kbd "M-o") 'ace-window)
 (define-key global-map (kbd "C-,") 'ace-jump-mode)
 (define-key global-map (kbd "C-.") 'ace-jump-char-mode)
 (define-key global-map (kbd "C-/") 'ace-jump-line-mode)
